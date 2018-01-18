@@ -1,0 +1,25 @@
+    <p><a href="/logout">Logout</a></p>
+<br>
+<p>Name: <%= @borrower.first_name %> </p>
+<p>Amount Needed: <%= price(@borrower.money) %> </p>
+<p>Amount Raised: </p>
+<br><br>
+<h2>List of people who lent you money:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Amount Lent</th>
+            </tr>
+        </thead>
+        <tbody>
+                <% @lent.each do |l| %>
+            <tr>
+                <td><%= @l.first_name %> <%= @l.last_name %></td>
+                <td><%= @l.email %></td>
+                <td><%= @l.amount %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>

@@ -1,0 +1,54 @@
+<p><a href="/logout">Logout</a></p>
+<br>
+<p>Name: <%= @lender.first_name %></p>
+<p>Account Balance: <%= price(@current_balance) %> </p>
+<br><br>
+<h2>List of people who are in need of help:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Money Needed For</th>
+                <th>Description</th>
+                <th>Amount Needed</th>
+                <th>Amount Raised</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+            <% @all_borrowers.each do |borrowers| %>
+        <tbody>
+            <tr>
+                <td><%= borrowers.first_name %> <%= borrowers.last_name%></td>
+                <td><%= borrowers.purpose %></td>
+                <td><%= borrowers.description %></td>
+                <td><%= price(borrowers.money) %></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+            <% end %>
+    </table>
+    <br><br>
+    <h2>List of people who you lent money to:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Money Needed For</th>
+                <th>Description</th>
+                <th>Amount Needed</th>
+                <th>Amount Raised</th>
+                <th>Amount Lent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
